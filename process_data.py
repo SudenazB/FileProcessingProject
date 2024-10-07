@@ -96,12 +96,15 @@ def main():
 
     args = parser.parse_args()
 
-    # Limit arguments
-    ids = args.ids[:10]
-    if len(ids) > 5:
-        print("Max ID limit is 5.")
+    ids = args.ids
+    if len(ids) > 10:
+        print("Max ID limit is 10.")
         return
-    attributes = args.attributes[:5]
+    attributes = args.attributes
+    if len(attributes) > 5:
+        print("Max attributes limit is 5.")
+        return
+
 
     print("IDs:", ids)
     print("Attributes:", attributes)
